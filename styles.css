@@ -1,0 +1,121 @@
+@font-face {
+    font-family: "Coure";
+    src: url("font/coure.woff");
+}
+
+:root {
+    background-color: #000;
+    color: #0f0;
+    font-family: "Coure";
+    font-smooth: none;
+    text-shadow: 0 0 16px #0f0;
+    text-align: center;
+    user-select: none;
+}
+
+a {
+    color: #0ff;
+    text-shadow: 0 0 16px #0ff;
+}
+
+#title {
+    white-space: pre;
+    user-select: none;
+}
+
+button{
+    background: none;
+    color: #0f0;
+    padding: 0px;
+    border: none;
+    text-shadow: 0 0 16px #0f0;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: linear 0.15s;
+    font-family: "Coure";
+    font-weight: bold;
+}
+
+button:hover{
+    background: #0f0;
+    box-shadow: 0 0 4px #0f0;
+    color: #000;
+    text-decoration: none;
+}
+
+.siteContainer{
+    display: inline-block;
+    min-width: 400px;
+    max-width: 600px;
+    height: auto;
+    border: solid 4px #0f0;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 16px 0 #0f0, inset 0 0 16px 0 #0f0;
+    padding: 16px;
+}
+
+.win-title{
+    color: #000;
+    display: inline;
+    vertical-align: top;
+    float: left;
+    margin-top: 4px;
+    margin-left: 4px;
+    font-weight: bold;
+    width: auto;
+}
+
+.icon{
+    display: inline;
+    vertical-align: top;
+    float: left;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 18px;
+    height: 18px;
+    image-rendering: pixelated;
+}
+
+.titlebar{
+    width: calc(100% + 32px);
+    height: 30px;
+    background: #0f0;
+    box-shadow: 0 0 16px 0 #0f0;
+    margin: -16px;
+}
+
+.close{
+    float: right;
+    margin-top: 1px;
+    width: 24px;
+    height: 24px;
+    background: url("img/close.png") center center no-repeat;
+    background-size: 18px;
+    image-rendering: pixelated;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.close:hover{
+    background: url("img/close_hover.png") center center no-repeat, #000;
+    background-size: 18px;
+    box-shadow: none;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    animation: blink 0.6s linear infinite;
+    font-weight: bolder;
+    user-select: none;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
