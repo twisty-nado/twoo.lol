@@ -141,7 +141,7 @@ button:hover{
     height: 10px;
     display: inline-block;
     vertical-align: middle;
-    margin-top: 1px;
+    margin-top: 2px;
     transition: linear 0.15s;
 }
 
@@ -153,7 +153,7 @@ button:hover{
     height: 10px;
     display: inline-block;
     vertical-align: middle;
-    margin-top: 1px;
+    margin-top: 2px;
     transition: linear 0.15s;
     opacity: 0.2;
 }
@@ -166,7 +166,7 @@ button:hover{
     height: 10px;
     display: inline-block;
     vertical-align: middle;
-    margin-top: 1px;
+    margin-top: 2px;
     transition: linear 0.15s;
 }
 
