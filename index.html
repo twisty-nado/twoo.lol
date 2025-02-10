@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoo's site</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/Windows_Explorer.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
+        integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="siteContainer">
+        <div class="titlebar">
+            <img class="icon" src="img/Windows_Explorer.svg">
+            <div class="win-title">Twoo's Site</div>
+            <span class="close"><span class="icon-c"></span></span>
+            <span class="max"><span class="icon-m"></span></span>
+            <span class="min"><span class="icon-mn"></span></span>
+        </div>
+        <h1 id="title">Twoo's site</h1>
+        <p>stuff.... yeahh!!</p>
+        <br>
+        <p>I like design, I make websites, other junk. Crazy errors, blah blah.<br>Windows 10 RTM vibe</p>
+        <button onclick="window.open('https://youtube.com/c/twistynado', '_blank')">YouTube</button>
+    </div>
+    <script>
+        var title = document.getElementById("title");
+        var strings = ["Twoo's site", "Yay", "Stuff", "So cool", "Yippee"];
+        var index = 0;
+        var cursor = "<span class=cursor>_</span>";
+
+        function typeText(text, callback) {
+            title.innerHTML = cursor;
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    title.innerHTML = text.slice(0, i + 1) + cursor;
+                    i++;
+                    setTimeout(type, 100);
+                } else if (callback) {
+                    setTimeout(callback, 1500);
+                }
+            }
+            type();
+        }
+
+        function deleteText(callback) {
+            let text = title.textContent;
+            function erase() {
+                if (text.length > 0) {
+                    text = text.slice(0, -1);
+                    title.innerHTML = text + cursor;
+                    setTimeout(erase, 50);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            erase();
+        }
+
+        function cycleText() {
+            deleteText(() => {
+                index = (index + 1) % strings.length;
+                typeText(strings[index], () => {
+                    setTimeout(cycleText, 1500);
+                });
+            });
+        }
+
+        typeText(strings[index], () => {
+            setTimeout(cycleText, 1500);
+        });
+
+        jQuery.fn.center = function () {
+            this.css("position","absolute");
+            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                                        $(window).scrollTop()) + "px");
+            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                                        $(window).scrollLeft()) + "px");
+            return this;
+        }
+
+        $(function (){
+            $(".siteContainer").draggable({ handle: ".titlebar", containment: "body" });
+            $(".siteContainer").center();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "Coure";
+    src: url("font/segoeui.ttf");
+}
+
+:root {
+    background: url("img/wp.png") center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-family: "Coure";
+    font-smooth: none;
+    text-shadow: none;
+    text-align: center;
+    user-select: none;
+    overflow: hidden;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+a {
+    color: #0ff;
+    text-shadow: 0 0 16px #0ff;
+}
+
+#title {
+    white-space: pre;
+    user-select: none;
+}
+
+.center{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button{
+    background: #e1e1e1;
+    color: #000;
+    padding: 3px;
+    min-width: 86px;
+    border: solid 1px #adadad;
+    box-sizing: border-box;
+    text-shadow: none;
+    cursor: default;
+    font-size: 9pt;
+    transition: linear 0.15s;
+    font-family: "Coure";
+}
+
+button:hover{
+    background: #e5f1fb;
+    border: solid 1px #0078d7;
+}
+
+.siteContainer{
+    background-color: #f0f0f0;
+    display: inline-block;
+    min-width: 400px;
+    max-width: 600px;
+    height: auto;
+    border: solid 1px #087cd4;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0 4px 24px #000000cc;
+    padding: 16px;
+}
+
+.win-title{
+    color: #000;
+    display: inline;
+    vertical-align: top;
+    float: left;
+    margin-top: 7px;
+    margin-left: 6px;
+    font-weight: normal;
+    font-size: 9pt;
+    width: auto;
+}
+
+.icon{
+    display: inline;
+    vertical-align: top;
+    float: left;
+    margin-top: 8px;
+    margin-left: 8px;
+    width: 14px;
+    height: 14px;
+    image-rendering: pixelated;
+}
+
+.titlebar{
+    width: calc(100% + 32px);
+    height: 30px;
+    background: #fff;
+    margin: -16px;
+}
+
+.close{
+    float: right;
+    margin-top: 0px;
+    width: 46px;
+    height: 30px;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.close:hover{
+    background: #E81123;
+}
+
+.close, .max, .min{
+    cursor: default;
+    transition: linear 0.15s;
+}
+
+.max, .min{
+    float: right;
+    margin-top: 0px;
+    width: 46px;
+    height: 30px;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.min:hover{
+    background: #00000022;
+}
+
+.icon-c{
+    background: url("img/close-k-10.png") center center no-repeat;
+    background-size: 10px;
+    image-rendering: pixelated;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 1px;
+    transition: linear 0.15s;
+}
+
+.icon-m{
+    background: url("img/max-k-10.png") center center no-repeat;
+    background-size: 10px;
+    image-rendering: pixelated;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 1px;
+    transition: linear 0.15s;
+    opacity: 0.2;
+}
+
+.icon-mn{
+    background: url("img/min-k-10.png") center center no-repeat;
+    background-size: 10px;
+    image-rendering: pixelated;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 1px;
+    transition: linear 0.15s;
+}
+
+.close:hover .icon-c{
+    filter: invert(1);
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    animation: blink 0.6s linear infinite;
+    font-weight: bolder;
+    user-select: none;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
